@@ -279,13 +279,18 @@ function GallerySection({ number, title, description, buttonText, images, themeC
   const [modalOpen,    setModalOpen]    = useState(false);
 
   /* Navigate with loop */
-  function goTo(i) {
-    var total = images.length;
-    setActiveIndex(((i % total) + total) % total);
-  }
+const goTo = useCallback(function(i) {
+  var total = images.length;
+  setActiveIndex(((i % total) + total) % total);
+}, [images.length]);
 
-  const prev = useCallback(function() { goTo(activeIndex - 1); }, [activeIndex, images.length]);
-  const next = useCallback(function() { goTo(activeIndex + 1); }, [activeIndex, images.length]);
+const prev = useCallback(function() { 
+  goTo(activeIndex - 1); 
+}, [activeIndex, goTo]);
+
+const next = useCallback(function() { 
+  goTo(activeIndex + 1); 
+}, [activeIndex, goTo]);
 
   /* Auto-rotate every 3s */
   useEffect(function() {
