@@ -71,7 +71,12 @@ function Modal({ images, startIndex, onClose }) {
 
 const goTo = useCallback(function(i) {
   var total = images.length;
-  setActiveIndex(((i % total) + total) % total);
+
+  setFade(false);
+  setTimeout(function() {
+    setIndex(((i % total) + total) % total);
+    setFade(true);
+  }, 180);
 }, [images.length]);
 
   const prev = useCallback(function() {
