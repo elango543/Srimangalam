@@ -69,21 +69,21 @@ function Modal({ images, startIndex, onClose }) {
   const [index, setIndex] = useState(startIndex);
   const [fade,  setFade]  = useState(true);
 
-  function goTo(i) {
-    setFade(false);
-    setTimeout(function() {
-      setIndex(i);
-      setFade(true);
-    }, 180);
-  }
+const goTo = useCallback(function(i) {
+  setFade(false);
+  setTimeout(function() {
+    setIndex(i);
+    setFade(true);
+  }, 180);
+}, []);
 
   const prev = useCallback(function() {
     goTo(index === 0 ? images.length - 1 : index - 1);
-  }, [index, images.length]);
+  }, [index, images.length, goTo]);
 
   const next = useCallback(function() {
     goTo(index === images.length - 1 ? 0 : index + 1);
-  }, [index, images.length]);
+  }, [index, images.length, goTo]);
 
   /* Keyboard */
   useEffect(function() {

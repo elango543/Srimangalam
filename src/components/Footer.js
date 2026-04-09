@@ -6,7 +6,6 @@ import "../styles/Footer.css";
 function Footer() {
   // ── Replace these with your actual details ──
   const INSTAGRAM_URL  = "https://www.instagram.com/sri_mangalam_80?utm_source=qr&igsh=MW03dnl4YmdveHAxeA==";
- {/* const FACEBOOK_URL   = "https://www.facebook.com/YOUR_PAGE"; */}
   const WHATSAPP_NUM   = "918072800880"; // country code + number, no + or spaces
   const GMAIL          = "srimangalameventscatering@gmail.com";
   const PHONE          = "+91 8072800880";
