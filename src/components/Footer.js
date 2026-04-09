@@ -2,6 +2,7 @@ import React from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 import "../styles/Footer.css";
+import smlogo from "../assets/smlogo.png"
 
 function Footer() {
   // ── Replace these with your actual details ──
@@ -20,7 +21,7 @@ function Footer() {
           
           {/* Brand Row */}
           <div className="footer-brand">
-            <img src="/smlogo.png" alt="Sri Mangalam Logo" className="footer-logo" />
+            <img src={smlogo} alt="Sri Mangalam Logo" className="footer-logo" />
             <span className="footer-brand-name">Sri Mangalam</span>
           </div>
 

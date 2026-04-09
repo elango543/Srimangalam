@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import BookModal from "../components/BookModal";
 import "../styles/Navbar.css";
+import smlogo from "../assets/smlogo.png"
 
 export default function Navbar() {
   const [isOpen,    setIsOpen]    = useState(false);
@@ -29,7 +30,7 @@ export default function Navbar() {
 
         {/* ── Logo ── */}
         <Link to="/" className="nav-logo" onClick={closeMenu}>
-          <img src="/smlogo.png" alt="Sri Mangalam Logo" className="nav-logo-img" />
+          <img src={smlogo} alt="Sri Mangalam Logo" className="nav-logo-img" />
           <span className="nav-brand">SRI MANGALAM</span>
         </Link>
 
