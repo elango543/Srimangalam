@@ -70,12 +70,9 @@ function Modal({ images, startIndex, onClose }) {
   const [fade,  setFade]  = useState(true);
 
 const goTo = useCallback(function(i) {
-  setFade(false);
-  setTimeout(function() {
-    setIndex(i);
-    setFade(true);
-  }, 180);
-}, []);
+  var total = images.length;
+  setActiveIndex(((i % total) + total) % total);
+}, [images.length]);
 
   const prev = useCallback(function() {
     goTo(index === 0 ? images.length - 1 : index - 1);
