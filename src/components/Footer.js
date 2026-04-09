@@ -62,16 +62,6 @@ function Footer() {
               <FaInstagram />
             </a>
 
-           {/* <a
-              href={FACEBOOK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-btn facebook"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>   */}
-
             <a
               href={`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent("Hello! I'm interested in booking your services")}`}
               target="_blank"
