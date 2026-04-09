@@ -1,0 +1,99 @@
+.hs-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -120px;
+  z-index: 0;
+}
+
+.hs-track {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hs-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hs-slide--active {
+  opacity: 1;
+}
+
+.hs-slide-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hs-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hs-dots {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.hs-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.hs-dot--active {
+  background: #fff;
+}
+
+.hs-progress {
+  position: absolute;
+  bottom: 125px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.hs-progress-bar {
+  height: 100%;
+  background: #fff;
+  width: 0%;
+  animation: progressFill 4s linear forwards;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .hs-track { height: 65vh; }
+  .hs-wrapper { margin-bottom: -100px; }
+  .hs-dots { bottom: 120px; }
+  .hs-progress { bottom: 105px; }
+}
+
+@media (max-width: 480px) {
+  .hs-track { height: 55vh; }
+  .hs-wrapper { margin-bottom: -80px; }
+  .hs-dots { bottom: 100px; }
+  .hs-progress { bottom: 85px; }
+}

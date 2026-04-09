@@ -1,0 +1,220 @@
+/* ─────────────────────────────────────────
+   FOOTER WRAPPER
+───────────────────────────────────────── */
+
+.footer {
+  background: #1a2a4a;
+  color: #ffffff;
+  font-family: 'Jost', sans-serif;
+}
+
+/* ─────────────────────────────────────────
+   INNER — single row, edge to edge
+───────────────────────────────────────── */
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  gap: 24px;
+}
+
+/* ── LEFT ── */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer-tagline {
+  font-size: 11px;
+  font-weight: 300;
+  color: #a0b0c8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── CENTER (Contact) ── */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+/* ── RIGHT (Social) ── */
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+/* ── Shared heading ── */
+.footer-heading {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c8963e;
+  margin: 0 0 4px 0;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  color: #ccd8e8;
+  font-size: 12px;
+  font-weight: 400;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.footer-contact-row:hover {
+  color: #c8963e;
+}
+
+.footer-contact-icon {
+  font-size: 13px;
+  color: #c8963e;
+  flex-shrink: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn.instagram {
+  background: radial-gradient(circle at 30% 110%, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+}
+
+.social-btn.facebook {
+  background: #1877f2;
+}
+
+.social-btn.whatsapp {
+  background: #25d366;
+}
+
+/* ─────────────────────────────────────────
+   BOTTOM COPYRIGHT BAR
+───────────────────────────────────────── */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 40px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 11px;
+  color: #7a90a8;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET & MOBILE (max 768px)
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .footer-inner {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* Brand — full width, centered */
+  .footer-left {
+    flex: 1 1 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-left .footer-brand {
+    justify-content: center;
+  }
+
+  /* Contact Us + Follow Us — side by side */
+  .footer-contact {
+    flex: 1;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-social-wrap {
+    flex: 1;
+    text-align: right;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    padding: 10px 20px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — SMALL MOBILE (max 380px)
+───────────────────────────────────────── */
+
+@media (max-width: 380px) {
+
+  .footer-contact-row {
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .social-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,606 @@
+/* ─────────────────────────────────────────
+   NAVBAR BASE
+───────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ─────────────────────────────────────────
+   LOGO
+───────────────────────────────────────── */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  z-index: 1100;
+}
+
+.nav-logo-img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────
+   DESKTOP NAV LINKS
+───────────────────────────────────────── */
+
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links-desktop a {
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444444;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+}
+
+.nav-links-desktop a:hover {
+  color: #c8963e;
+}
+/* Desktop active link */
+.nav-links-desktop a.active {
+  color: #c8963e;
+  position: relative;
+}
+
+/* Mobile drawer active link */
+.drawer-links a.active {
+  color: #c8963e;
+  background: #fdf8f2;
+  border-left: 3px solid #c8963e;
+  padding-left: 25px;
+}
+
+/* ─────────────────────────────────────────
+   CTA BUTTON
+───────────────────────────────────────── */
+
+.nav-cta {
+  background: #1a2a4a;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #c8963e;
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────
+   HAMBURGER — hidden on desktop
+───────────────────────────────────────── */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 1100;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.hamburger:hover {
+  background: #f5f5f5;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #1a1a1a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* ✕ animation */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────
+   SPACER (balances hamburger on mobile)
+───────────────────────────────────────── */
+
+.nav-spacer {
+  display: none;
+  width: 40px;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE DRAWER
+───────────────────────────────────────── */
+
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  flex-direction: column;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.38s ease, opacity 0.28s ease;
+}
+
+.mobile-drawer.active {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.drawer-links {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 0;
+}
+
+.drawer-links li {
+  width: 100%;
+}
+
+.drawer-links a {
+  display: block;
+  padding: 16px 28px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #333333;
+  text-decoration: none;
+  border-bottom: 1px solid #f2f2f2;
+  transition: background 0.2s, color 0.2s;
+}
+
+.drawer-links a:hover {
+  background: #fafafa;
+  color: #c8963e;
+}
+
+.drawer-cta-wrap {
+  padding: 20px 20px 24px;
+}
+
+.drawer-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #1a2a4a;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background 0.25s ease;
+  box-sizing: border-box;
+}
+
+.drawer-cta:hover {
+  background: #c8963e;
+}
+
+/* ─────────────────────────────────────────
+   OVERLAY (mobile menu)
+───────────────────────────────────────── */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  animation: fadeOverlay 0.2s ease;
+}
+
+@keyframes fadeOverlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (max 768px)
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 0 16px;
+    height: 64px;
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-self: start;
+  }
+
+  .nav-logo {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .nav-spacer {
+    display: block;
+    justify-self: end;
+  }
+
+  .nav-links-desktop {
+    display: none;
+  }
+
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .mobile-drawer {
+    display: flex;
+  }
+}
+
+/* ─────────────────────────────────────────
+   SMALL MOBILE (max 380px)
+───────────────────────────────────────── */
+
+@media (max-width: 380px) {
+  .nav-brand {
+    font-size: 18px;
+  }
+
+  .nav-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* ═════════════════════════════════════════
+   BOOKING MODAL
+═════════════════════════════════════════ */
+
+/* ── Backdrop ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: backdropIn 0.22s ease;
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Card ── */
+.modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px 32px 32px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  animation: cardIn 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: scale(0.92) translateY(16px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+/* ── Close button ── */
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+  background: #ffe0e0;
+  color: #c00;
+}
+
+/* ── Logo area ── */
+.modal-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.modal-logo-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.modal-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.modal-tagline {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #c8963e;
+  text-transform: uppercase;
+}
+
+/* ── Form ── */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.modal-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 0.04em;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #222;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.modal-input:focus {
+  border-color: #1a2a4a;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(26, 42, 74, 0.08);
+}
+
+.modal-input::placeholder {
+  color: #aaa;
+}
+
+/* ── Phone row (flag dropdown + number input) ── */
+.modal-phone-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.modal-country-select {
+  flex-shrink: 0;
+  width: 105px;
+  padding: 13px 10px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #222;
+  background: #fafafa;
+  outline: none;
+  cursor: pointer;
+  appearance: auto;
+  transition: border-color 0.2s;
+}
+
+.modal-country-select:focus {
+  border-color: #1a2a4a;
+  background: #fff;
+}
+
+.modal-mobile-input {
+  flex: 1;
+}
+
+/* ── Submit button ── */
+.modal-submit {
+  width: 100%;
+  padding: 15px 24px;
+  background: #e8703a;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: 4px;
+}
+
+.modal-submit:hover:not(:disabled) {
+  background: #d05f2b;
+  transform: translateY(-1px);
+}
+
+.modal-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* ── Loading spinner ── */
+.modal-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Success state ── */
+.modal-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0 8px;
+  text-align: center;
+}
+
+.modal-success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.modal-success-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.modal-success-msg {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #666;
+  max-width: 280px;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 480px) {
+  .modal-card {
+    padding: 28px 20px 24px;
+    border-radius: 16px;
+  }
+
+  .modal-logo-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal-brand {
+    font-size: 17px;
+  }
+
+  .modal-country-select {
+    width: 90px;
+    font-size: 13px;
+  }
+}

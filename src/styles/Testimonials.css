@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ─────────────────────────────────────────
+   SECTION
+───────────────────────────────────────── */
+
+.testi-section {
+  position: relative;
+  background: linear-gradient(135deg, #e8f6f5 0%, #f5fbfb 50%, #eaf4f3 100%);
+  padding: 72px 0 56px;
+  overflow: hidden;
+  font-family: 'Jost', sans-serif;
+  touch-action: pan-y;
+}
+
+.testi-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ─────────────────────────────────────────
+   DECORATIVE BG QUOTES
+───────────────────────────────────────── */
+
+.testi-bg-quote {
+  position: absolute;
+  font-size: 200px;
+  font-family: 'Cormorant Garamond', serif;
+  color: rgba(77, 181, 173, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.testi-bg-quote--top  { top: -20px;  left: 20px;  }
+.testi-bg-quote--bottom { bottom: -40px; right: 40px; }
+
+/* ─────────────────────────────────────────
+   HEADER
+───────────────────────────────────────── */
+
+.testi-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.testi-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.testi-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────
+   STAGE
+───────────────────────────────────────── */
+
+.testi-stage {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────
+   CARD
+───────────────────────────────────────── */
+
+.testi-card {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  padding: 24px 0;
+}
+
+.testi-card--enter {
+  animation: slideEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.testi-card--exit-down {
+  animation: slideExitUp 0.35s ease-in forwards;
+}
+
+.testi-card--exit-up {
+  animation: slideExitDown 0.35s ease-in forwards;
+}
+
+@keyframes slideEnter {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideExitUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-40px); }
+}
+
+@keyframes slideExitDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(40px); }
+}
+
+/* ─────────────────────────────────────────
+   PHOTO COLUMN
+───────────────────────────────────────── */
+
+.testi-photo-col {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.testi-accent-bars {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  margin-right: 10px;
+  height: 170px;
+}
+
+.testi-bar {
+  display: block;
+  width: 9px;
+  border-radius: 6px;
+}
+
+.testi-bar--teal  { height: 100%; background: #4db5ad; }
+.testi-bar--coral { height: 68%;  background: #e07b6a; }
+
+.testi-photo-ring {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.13);
+  background: #f0f0f0;
+  flex-shrink: 0;
+  /* Restore pointer events on the ring so hover still works */
+  pointer-events: auto;
+}
+
+/* ─────────────────────────────────────────
+   PHOTO — background-image approach
+   (replaces the old <img> .testi-photo rule)
+───────────────────────────────────────── */
+
+.testi-photo-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: block;
+
+  /* Block text selection on the element */
+  user-select: none;
+  -webkit-user-select: none;
+
+  /* Block long-press "Save image" on iOS Safari */
+  -webkit-touch-callout: none;
+
+  /* No pointer events on the image div itself — kills drag-to-download */
+  pointer-events: none;
+}
+
+.testi-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #bbb;
+  font-size: 11px;
+  background: linear-gradient(135deg, #e8f4f3, #f5fbfb);
+}
+
+/* ─────────────────────────────────────────
+   REVIEW CONTENT
+───────────────────────────────────────── */
+
+.testi-content {
+  flex: 1;
+}
+
+.testi-open-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  color: rgba(77, 181, 173, 0.22);
+  line-height: 0.6;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.testi-review {
+  font-size: 15px;
+  font-weight: 400;
+  color: #444;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.testi-names {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4db5ad;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────
+   SCROLL HINT
+───────────────────────────────────────── */
+
+.testi-hint {
+  text-align: center;
+  font-size: 12px;
+  color: #4db5ad;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin-top: 16px;
+  opacity: 0.75;
+  animation: pulseHint 2s ease-in-out infinite;
+}
+
+@keyframes pulseHint {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1;   }
+}
+
+/* ─────────────────────────────────────────
+   DOT INDICATORS
+───────────────────────────────────────── */
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #c0d8d6;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.testi-dot.active {
+  background: #4db5ad;
+  transform: scale(1.35);
+}
+
+.testi-dot:hover {
+  background: #4db5ad;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET (max 900px)
+───────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .testi-inner { padding: 0 24px; }
+
+  .testi-title { font-size: 28px; }
+
+  .testi-card { gap: 32px; }
+
+  .testi-photo-ring {
+    width: 150px;
+    height: 150px;
+  }
+
+  .testi-accent-bars { height: 134px; }
+
+  .testi-review { font-size: 14px; }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (max 600px)
+───────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .testi-section { padding: 48px 0 40px; }
+
+  .testi-inner { padding: 0 16px; }
+
+  .testi-title {
+    font-size: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .testi-subtitle { font-size: 14px; }
+
+  .testi-header { margin-bottom: 28px; }
+
+  .testi-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    text-align: center;
+  }
+
+  .testi-photo-col { justify-content: center; }
+
+  .testi-accent-bars { height: 110px; }
+
+  .testi-photo-ring {
+    width: 130px;
+    height: 130px;
+  }
+
+  .testi-open-quote {
+    font-size: 52px;
+    text-align: left;
+  }
+
+  .testi-review {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .testi-names { text-align: center; }
+
+  .testi-stage { min-height: 420px; }
+
+  .testi-bg-quote { font-size: 100px; }
+}
+
+/* ─────────────────────────────────────────
+   SMALL MOBILE (max 380px)
+───────────────────────────────────────── */
+
+@media (max-width: 380px) {
+  .testi-title { font-size: 17px; }
+
+  .testi-photo-ring {
+    width: 110px;
+    height: 110px;
+  }
+
+  .testi-accent-bars { height: 95px; }
+
+  .testi-review { font-size: 13px; }
+}
