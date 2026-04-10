@@ -27,7 +27,7 @@ function Footer() {
 
           {/* Tagline Below */}
           <p className="footer-tagline">
-            Making your dream wedding a beautiful reality.
+            Crafting Moments, Creating Memories.
           </p>
 
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import emailjs from "emailjs-com";
 import "../styles/BookModal.css";
+import smlogo from "../assets/smlogo.png"
 
 const COUNTRY_CODES = [
   { code: "+91",  flag: "🇮🇳" },
@@ -164,10 +165,10 @@ function BookModal({ isOpen, onClose, serviceLabel }) {
 
             {/* Logo */}
             <div className="bm-logo-row">
-              <img src="/smlogo.png" alt="Sri Mangalam logo" className="bm-logo-img" />
+              <img src={smlogo} alt="Sri Mangalam logo" className="bm-logo-img" />
               <div className="bm-logo-text">
                 <span className="bm-brand">SRI MANGALAM</span>
-                <span className="bm-tagline">CRAFTING DREAM WEDDINGS</span>
+                <span className="bm-tagline">Crafting Moments, Creating Memories.</span>
               </div>
             </div>
 
